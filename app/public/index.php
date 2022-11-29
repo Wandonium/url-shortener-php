@@ -1,5 +1,5 @@
 <?php
-    echo $_SERVER['REQUEST_URI'];
+    // echo $_SERVER['REQUEST_URI'];
     function guidv4($data = null) {
         // Generate 16 bytes (128 bits) of random data or use the data passed into the function.
         $data = $data ?? random_bytes(16);
@@ -15,18 +15,19 @@
     }
 
     $url_id = '';
+    $show_link = false;
     if(!empty($_POST['url'])) {
         $url_id = substr(uniqid(), 6, 6);
         $short_url = "http://localhost:8080/" . $url_id . ".php";
-        echo "<a href=${short_url}>${short_url}</a>";
         // Write data into file. Will create the file if it doesn't exist
         $file = $url_id . ".php";
         $handle = fopen($file, 'w');
-        $contents = $url_id . " page look like this...";
+        // $contents = $url_id . " page look like this...";
+        $contents = "<?php header(\"Location: " . $_POST['url'] . "\"); ?>";
         fwrite($handle, $contents);
         fclose($handle);
+        $show_link = true;
     }
-    echo '<br/>' . $url_id;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,6 +45,8 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-    
+    <?php if($show_link): ?>
+        <h2>Your shortened link is: <?php echo $short_url; ?></h2>
+    <?php endif; ?>
 </body>
 </html>
