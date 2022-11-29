@@ -1,5 +1,5 @@
 <?php
-
+    echo $_SERVER['REQUEST_URI'];
     function guidv4($data = null) {
         // Generate 16 bytes (128 bits) of random data or use the data passed into the function.
         $data = $data ?? random_bytes(16);
@@ -14,10 +14,19 @@
         return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
     }
 
+    $url_id = '';
     if(!empty($_POST['url'])) {
-        echo $_POST['url'];
-        echo '<br/>' . uniqid();
+        $url_id = substr(uniqid(), 6, 6);
+        $short_url = "http://localhost:8080/" . $url_id . ".php";
+        echo "<a href=${short_url}>${short_url}</a>";
+        // Write data into file. Will create the file if it doesn't exist
+        $file = $url_id . ".php";
+        $handle = fopen($file, 'w');
+        $contents = $url_id . " page look like this...";
+        fwrite($handle, $contents);
+        fclose($handle);
     }
+    echo '<br/>' . $url_id;
 ?>
 <!DOCTYPE html>
 <html lang="en">
