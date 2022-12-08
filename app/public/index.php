@@ -35,18 +35,81 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>My URL Shortener</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet" />
+    <style>
+        #url-to-shorten {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ced4da;
+            border-radius: .3rem;
+        }
+
+        .input-grp {
+            display: flex;
+            width: 80vw;
+            max-width: 900px;
+        }
+
+        .submit {
+            background-color: #0d6efd;
+            color: #fff;
+            height: 3rem;
+            padding: .5rem;
+            font-size: 1rem;
+            font-family: 'Source Sans Pro', sans-serif;
+            border: none;
+            border-radius: .3rem;
+            margin-top: .4rem;
+            margin-left: -10.5rem;
+            box-shadow: 0px 2px 4px gray;
+            /* transform: translateX(-102%); */
+        }
+
+        @media screen and (max-width: 798px) {
+            .input-grp { flex-direction: column; }
+            .submit { margin-left: 0; }
+
+        }
+    </style>
+    <title>Short.ly URL Shortener</title>
 </head>
 <body>
-    <form class="m-auto w-50 mt-5" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-        <div class="mb-3">
-            <input type="text" class="form-control" id="url-to-shorten" name="url" placeholder="Type a URL (content you want your shortened link to point to)" />
+    <nav class="navbar navbar-expand-sm mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">Short.ly</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.php">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.php">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    <?php if($show_link): ?>
-        <h2>Your shortened link is: <?php echo $short_url; ?></h2>
-    <?php endif; ?>
+    </nav>
+    <main>
+        <div class="container d-flex flex-column align-items-center">
+            <form class="m-auto mt-5" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+                <div class="input-grp">
+                    <input type="text" id="url-to-shorten" name="url" placeholder="Type a URL (content you want your shortened link to point to)" />
+                    <button class="submit" type="submit">Generate Shortly link</button>
+                </div>
+            </form>
+            <?php if($show_link): ?>
+                <h2>Your shortened link is: <?php echo $short_url; ?></h2>
+            <?php endif; ?>
+        </div>
+    </main>
 </body>
 </html>
