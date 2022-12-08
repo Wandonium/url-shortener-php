@@ -40,6 +40,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet" />
     <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(150, 97, 255);
+        }
+
         #url-to-shorten {
             width: 100%;
             padding: 1rem;
@@ -70,7 +76,7 @@
 
         svg {
             position: absolute;
-            top: -12rem;
+            /* top: -12rem; */
             left: 0;
             z-index: -100;
         }
@@ -128,10 +134,11 @@
     <script>
         console.log("height: " + screen.height);
         var myWave = wavify( document.querySelector('#myID'), {
-            height: 600,
+            height: 500,
             bones: 5,
             amplitude: 40,
-            color: 'rgba(150, 97, 255, .8)',
+            // color: 'rgba(150, 97, 255, 1)',
+            color: 'rgba(255, 255, 255, 1)',
             speed: .15
         });
     </script>
