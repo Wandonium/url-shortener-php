@@ -68,6 +68,17 @@
             /* transform: translateX(-102%); */
         }
 
+        svg {
+            position: absolute;
+            top: -12rem;
+            left: 0;
+            z-index: -100;
+        }
+
+        .nav-link, .navbar-brand {
+            color: #fff;
+        }
+
         @media screen and (max-width: 798px) {
             .input-grp { flex-direction: column; }
             .submit { margin-left: 0; }
@@ -77,6 +88,7 @@
     <title>Short.ly URL Shortener</title>
 </head>
 <body>
+    <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs></defs><path id="myID" d=""/></svg>
     <nav class="navbar navbar-expand-sm mb-4">
         <div class="container">
             <a class="navbar-brand" href="#">Short.ly</a>
@@ -111,5 +123,17 @@
             <?php endif; ?>
         </div>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="wavify.js"></script>
+    <script>
+        console.log("height: " + screen.height);
+        var myWave = wavify( document.querySelector('#myID'), {
+            height: 600,
+            bones: 5,
+            amplitude: 40,
+            color: 'rgba(150, 97, 255, .8)',
+            speed: .15
+        });
+    </script>
 </body>
 </html>
