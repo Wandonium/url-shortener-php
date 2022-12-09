@@ -137,7 +137,7 @@
     <main>
         <div class="container d-flex flex-column align-items-center mt-5 pt-5">
             <h4 class="action">Shorten URLs and</h4>
-            <h1 class="fw-light action">EARN MONEY</h1>
+            <h1 class="fw-light action">DRIVE WEB TRAFFIC</h1>
             <form class="m-auto mt-5" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
                 <div class="input-grp">
                     <input type="text" id="url-to-shorten" name="url" placeholder= "Type a URL (content you want your shortened link to point to)"/>
