@@ -39,8 +39,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,400&display=swap" rel="stylesheet" /> 
     <style>
-        body {
+        html, body {
             width: 100%;
             height: 100vh;
             background-color: rgb(150, 97, 255);
@@ -56,7 +57,7 @@
         .input-grp {
             display: flex;
             width: 80vw;
-            max-width: 900px;
+            max-width: 50vw;
         }
 
         .submit {
@@ -74,15 +75,28 @@
             /* transform: translateX(-102%); */
         }
 
-        svg {
+        #intro {
             position: absolute;
-            /* top: -12rem; */
-            left: 0;
-            z-index: -100;
+            top: 0;
         }
 
         .nav-link, .navbar-brand {
             color: #fff;
+        }
+
+        .action {
+            color: #fff;
+            font-family: 'Lato', sans-serif;
+        }
+
+        h4.action {
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        h1.action {
+            font-weight: 700;
+            font-size: 60px;
         }
 
         @media screen and (max-width: 798px) {
@@ -94,7 +108,6 @@
     <title>Short.ly URL Shortener</title>
 </head>
 <body>
-    <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs></defs><path id="myID" d=""/></svg>
     <nav class="navbar navbar-expand-sm mb-4">
         <div class="container">
             <a class="navbar-brand" href="#">Short.ly</a>
@@ -117,7 +130,9 @@
         </div>
     </nav>
     <main>
-        <div class="container d-flex flex-column align-items-center">
+        <div class="container d-flex flex-column align-items-center mt-5 pt-5">
+            <h4 class="action">Shorten URLs and</h4>
+            <h1 class="fw-light action">EARN MONEY</h1>
             <form class="m-auto mt-5" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
                 <div class="input-grp">
                     <input type="text" id="url-to-shorten" name="url" placeholder="Type a URL (content you want your shortened link to point to)" />
@@ -129,18 +144,9 @@
             <?php endif; ?>
         </div>
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-    <script src="wavify.js"></script>
-    <script>
-        console.log("height: " + screen.height);
-        var myWave = wavify( document.querySelector('#myID'), {
-            height: 500,
-            bones: 5,
-            amplitude: 40,
-            // color: 'rgba(150, 97, 255, 1)',
-            color: 'rgba(255, 255, 255, 1)',
-            speed: .15
-        });
-    </script>
+    <svg width="100%" height="100%" id="intro" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <path id="wave" d="" fill="#fff"/>
+    </svg>
+    <script src="wavy.js"></script>
 </body>
 </html>
