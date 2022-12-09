@@ -76,8 +76,7 @@
         }
 
         #intro {
-            position: absolute;
-            top: 0;
+            z-index: -100;
         }
 
         .nav-link, .navbar-brand {
@@ -97,6 +96,12 @@
         h1.action {
             font-weight: 700;
             font-size: 60px;
+        }
+
+        .link {
+            margin-top: 2rem;
+            color: #fff;
+            font-family: 'Source Sans Pro', sans-serif;
         }
 
         @media screen and (max-width: 798px) {
@@ -135,16 +140,16 @@
             <h1 class="fw-light action">EARN MONEY</h1>
             <form class="m-auto mt-5" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
                 <div class="input-grp">
-                    <input type="text" id="url-to-shorten" name="url" placeholder="Type a URL (content you want your shortened link to point to)" />
+                    <input type="text" id="url-to-shorten" name="url" placeholder= "Type a URL (content you want your shortened link to point to)"/>
                     <button class="submit" type="submit">Generate Shortly link</button>
                 </div>
             </form>
             <?php if($show_link): ?>
-                <h2>Your shortened link is: <?php echo $short_url; ?></h2>
+                <h2 class="link">Your shortened link is: <?php echo $short_url; ?></h2>
             <?php endif; ?>
         </div>
     </main>
-    <svg width="100%" height="100%" id="intro" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <svg width="100%" height="41.8%" id="intro" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <path id="wave" d="" fill="#fff"/>
     </svg>
     <script src="wavy.js"></script>

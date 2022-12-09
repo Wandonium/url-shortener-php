@@ -4,7 +4,7 @@ var height = container.offsetHeight;
 var wave = document.getElementById('wave');
 
 var waveWidth = container.offsetWidth;  // Wave SVG width (usually container width)
-var waveHeight = 500;                   // Position from the top of container
+var waveHeight = 100;                   // Position from the top of container
 var waveDelta = 30;                     // Wave amplitude
 var speed = 0.3;                        // Wave animation speed
 var wavePoints = 4;                     // How many point will be used to compute our wave
