@@ -83,6 +83,38 @@
             color: #fff;
         }
 
+        .nav-item {
+            margin-right: 2rem;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1.2rem;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #fff;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #fff;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        .nav-link:hover:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
         .action {
             color: #fff;
             font-family: 'Lato', sans-serif;
