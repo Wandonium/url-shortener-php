@@ -160,7 +160,7 @@
                         <a class="nav-link" href="feedback.php">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.php">Sign Up</a>
+                        <a class="nav-link" href="register.php">Sign Up</a>
                     </li>
                 </ul>
             </div>
@@ -181,7 +181,7 @@
             <?php endif; ?>
         </div>
     </main>
-    <svg width="100%" height="41.8%" id="intro" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <svg width="100%" height="43%" id="intro" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <path id="wave" d="" fill="#fff"/>
     </svg>
     <script src="wavy.js"></script>
