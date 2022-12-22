@@ -146,17 +146,19 @@
         </div>
     </nav>
     <main class="d-flex justify-content-center align-items-center">
-        <div class="card" style="width: 50%">
+        <div class="container mx-5 card">
             <div class="card-body">
                 <form>
                     <!-- 2 column grid layout with text inputs for the first and last names -->
                     <div class="row mb-4">
+                        <!-- <div class="col-md-6 col-sm-12"> -->
                         <div class="col">
                         <div class="form-outline">
                             <input type="text" id="form3Example1" class="form-control" />
                             <label class="form-label" for="form3Example1">First name</label>
                         </div>
                         </div>
+                        <!-- <div class="col-md-6 col-sm-12"> -->
                         <div class="col">
                         <div class="form-outline">
                             <input type="text" id="form3Example2" class="form-control" />
