@@ -145,9 +145,9 @@
             </div>
         </div>
     </nav>
-    <main>
-        <div class="card">
-            <div class="card-body justify-content-center align-items-center">
+    <main class="d-flex justify-content-center align-items-center">
+        <div class="card" style="width: 50%">
+            <div class="card-body">
                 <form>
                     <!-- 2 column grid layout with text inputs for the first and last names -->
                     <div class="row mb-4">
